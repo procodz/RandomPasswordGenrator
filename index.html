@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomPassword</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="text">Random Password Genrator</div>
+        <div class="display">
+            <input type="text">
+            <a href="#" onclick="getPassword()" id="btn">Genrate Password</a>
+        </div>
+    </div>
+    <script>
+    function getPassword(){
+    let chars = "abcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*";
+    var password = "";
+    for(let i=0; i<16; i++){
+        let randomNumber = Math.floor(Math.random() * chars.length);
+        password += chars.substring(randomNumber,randomNumber+1);
+    }
+    document.querySelector('input').value = password;
+    console.log(password);
+}
+
+    </script>
+</body>
+</html>
